@@ -11,18 +11,31 @@ header {
     text-align-last: center;
 }
 h1 {
+    text-transform: capitalize;
     text-align: center;
     margin: 0;
 }
+h2 {
+     text-transform: capitalize;;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 .entrar {
+    position: absolute;
     color: #ffffff;
     text-align: center;
-    background:linear-gradient(10deg, #ff7b00, #f7971e, #ffd200);
-    padding: 20px;
-    margin: 50px auto;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #ff7b00, #f7971e, #ffd200);
+    width: 320px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+
+
 
     display: flex;
     flex-direction: column;
@@ -40,6 +53,11 @@ h1 {
     border: none;
     outline: none;
 }
+.entrar input:focus {
+    box-shadow: 0 0 10px #be8200;
+    transition: 0.3s;
+}
+
 .entrar button {
     display: block;
     margin: 10px auto;
