@@ -24,7 +24,6 @@ h2 {
     align-items: center;
     justify-content: center;
     height: 100vh;
-}
 .entrar {
     position: absolute;
     color: #ffffff;
@@ -80,3 +79,4 @@ h2 {
     object-fit: cover; 
 }
 
+}
