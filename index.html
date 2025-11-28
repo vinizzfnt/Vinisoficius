@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de tarefas</title>
 </head>
 <body>
     <div class="main">
-        
+      <header>
+        <h1>lista de tarefas</h1>
+      </header>  
+          
         <div class="entrar">
-            <h1>Vini's Phone</h1>
             <h2>Bem vindo(a)</h2>
-            <form>
-                <input type="text" placeholder="Usuário" required>
-                <input type="password" placeholder="Senha" required>
-                <button type="submit">Entrar</button>
-            </form>
-        </div>
+<form id="formLogin">
+    <input type="text" placeholder="Usuário" required>
+    <input id="loginSenha" type="password" placeholder="Senha" required>
+    <button type="submit">Entrar</button>
+    <button type="button" onclick="mostrarSenhaLogin()"><img class="mostrar" src="mostrar-senha.png"></button>
+</form>        
 
-        <div class="registrar">
-            <h2>Registrar</h2>
-            <form>
-                <input type="text" placeholder="Usuário" required>
-                <input type="password" placeholder="crie sua senha" required>
-                <input type="password" placeholder="Confirme sua senha" required>
-                <button type="submit">Registrar</button>
-            </form>
+<h2>Registrar</h2>
+<form id="formRegistro">
+    <input type="text" placeholder="Usuário" required>
+    <input id="senha" type="password" placeholder="Crie sua senha" required>
+    <input id="senha2" type="password" placeholder="Confirme sua senha" required>
+    <button type="submit">Registrar</button>
+    <button type="button" onclick="mostrarSenhas()"><img class="mostrar" src="mostrar-senha.png"></button>
+</form>
+
         </div>
         
     </div>
