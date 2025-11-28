@@ -16,9 +16,15 @@ body {
 }
 
 @keyframes sunrise {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
@@ -49,8 +55,9 @@ h1 {
 
 .input-box {
   width: 100%;
+  max-width: 350px;
   position: relative;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 .input-box input {
@@ -62,16 +69,23 @@ h1 {
   outline: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 .icon {
-  position: absolute;
   width: 22px;
+  height: 22px;
+  position: absolute;
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
+  object-fit: contain;
 }
 
 .options {
   width: 100%;
+  max-width: 350px;
   display: flex;
   justify-content: space-between;
   font-size: 14px;
@@ -80,6 +94,7 @@ h1 {
 
 button {
   width: 100%;
+  max-width: 350px;
   padding: 12px;
   border: none;
   background: #ff9a3c;
@@ -98,6 +113,7 @@ button {
   text-decoration: none;
   font-weight: 600;
 }
+
 @media (max-width: 500px) {
   .container {
     width: 90%;
@@ -108,31 +124,12 @@ button {
     font-size: 24px;
   }
 
-  .input-box input {
-    font-size: 15px;
-    padding: 12px 45px;
-  }
-
   button {
     font-size: 16px;
   }
-}
-
-@media (max-width: 360px) {
-  .container {
-    width: 95%;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  .icon {
-    width: 18px;
-    left: 12px;
-  }
 
   .input-box input {
+    font-size: 14px;
     padding: 10px 40px;
   }
 }
