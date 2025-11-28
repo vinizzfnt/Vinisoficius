@@ -16,15 +16,9 @@ body {
 }
 
 @keyframes sunrise {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -69,32 +63,7 @@ h1 {
   outline: none;
 }
 
-img {
-  max-width: 100%;
-}
-
 .icon {
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  object-fit: contain;
-}
-
-.img-toggle{
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  object-fit: contain;
-  cursor: pointer;
-}
-
-.toggle {
   width: 22px;
   height: 22px;
   position: absolute;
