@@ -1,8 +1,12 @@
-const senha = document.getElementById("senha");
-const toggle = document.getElementById("togglePassword");
+const senha = document.getElementById('senha');
+const toggle = document.getElementById('togglePassword');
 
-toggle.addEventListener("click", () => {
-    const type = senha.getAttribute("type") === "password" ? "text" : "password";
-    senha.setAttribute("type", type);
-    toggle.src = type === "password" ? "eye.png" : "hide.png";
+toggle.addEventListener('click', () => {
+    if (senha.type === 'password') {
+        senha.type = 'text';
+        toggle.src = 'hide.png';
+    } else {
+        senha.type = 'password';
+        toggle.src = 'eye.png';
+    }
 });

@@ -10,68 +10,89 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #f8a5a5, #ec6f66);
+    background: linear-gradient(120deg, #ff9a3c, #ff5f6d, #ffc371);
 }
 
 .container {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 380px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+h1 {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .input-box {
     position: relative;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 .input-box input {
     width: 100%;
-    padding: 12px 45px 12px 45px;
-    border: none;
-    background: #f3f3f3;
-    border-radius: 30px;
-    outline: none;
+    padding: 10px 40px 10px 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.icon {
+.input-box .icon {
     position: absolute;
-    left: 15px;
     top: 50%;
+    left: 10px;
     transform: translateY(-50%);
-    width: 22px;
+    width: 20px;
+    height: 20px;
 }
 
-.toggle-icon {
+.input-box .toggle-icon {
     position: absolute;
-    right: 15px;
     top: 50%;
+    right: 10px;
     transform: translateY(-50%);
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 }
 
 .options {
-    margin: 10px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
     font-size: 14px;
+}
+
+.options a {
+    text-decoration: none;
+    color: #ff5f6d;
 }
 
 button {
     width: 100%;
-    padding: 12px;
-    background: #f2a154;
+    padding: 10px;
+    background: #ff5f6d;
     border: none;
-    border-radius: 30px;
+    border-radius: 5px;
+    color: #fff;
     font-size: 16px;
     cursor: pointer;
 }
 
+button:hover {
+    background: #ff3b4f;
+}
+
 .signup {
-    margin-top: 15px;
+    text-align: center;
+    margin-top: 20px;
     font-size: 14px;
+}
+
+.signup a {
+    text-decoration: none;
+    color: #ff5f6d;
 }
