@@ -12,7 +12,6 @@
   --text-color: #000;
 
   --container-bg: #ffffff4f;
-  --text-color: #000;
   --input-bg: #ffffff44;
 
   --button-bg: #ff5f6d;
@@ -28,10 +27,9 @@
   --bg1: #0a1c2d;
   --bg2: #0f2f4f;
   --bg3: #072032;
-  --text-color: #8d8d8d;
+  --text-color: #e7f3ff;
 
   --container-bg: #ffffff15;
-  --text-color: #e7f3ff;
   --input-bg: #0f2538;
 
   --button-bg: #1e4f91;
@@ -43,9 +41,8 @@
   --checkbox-bg: #4facfe;
 }
 
-
 body {
-  color: (var(--text-color));
+  color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,15 +53,9 @@ body {
 }
 
 @keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -86,9 +77,12 @@ body {
   height: 35px;     
   cursor: pointer;
   z-index: 1000;
-  transition: opacity 0.25s ease, transform 0.25s ease;
   object-fit: contain; 
   filter: brightness(1);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+#themeIcon:hover {
+  transform: scale(1.2);
 }
 .dark-theme #themeIcon {
   filter: brightness(0) invert(1);
@@ -137,6 +131,7 @@ h1 {
 .dark-theme .input-box .icon {
   filter: brightness(0) invert(1);
 }
+
 .input-box .toggle-icon {
   position: absolute;
   top: 50%;
@@ -150,7 +145,6 @@ h1 {
 .dark-theme .input-box .toggle-icon {
   filter: brightness(0) invert(1);
 }
-
 
 .options {
   display: flex;
@@ -171,7 +165,7 @@ button {
   background: var(--button-bg);
   border: none;
   border-radius: 5px;
-  color: var(--button-text-color);
+  color: #fff;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
@@ -192,9 +186,11 @@ button:hover {
   text-decoration: none;
   color: var(--link-color);
 }
+
 .custom-checkbox input {
   display: none;
 }
+
 .custom-checkbox span {
   display: inline-block;
   width: 16px;
@@ -206,12 +202,15 @@ button:hover {
   position: relative;
   border-radius: 4px;
 }
+
 .custom-checkbox input:checked + span {
   background: var(--checkbox-bg);
 }
+
 .custom-checkbox input:hover + span {
   cursor: pointer;
 }
+
 .custom-checkbox input:checked + span::after {
   content: "";
   position: absolute;
@@ -219,7 +218,7 @@ button:hover {
   left: 6px;
   width: 4px;
   height: 8px;
-  border: solid var(--input-bg);
+  border: solid #fff;
   border-width: 0 2px 2px 0;
   transform: translate(-50%, -50%) rotate(45deg);
 }
