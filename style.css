@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  transition: background 0.2s, color 0.2s, transform 0.2s, opacity 0.2s;
 }
 
 :root {
@@ -49,7 +50,8 @@ body {
   min-height: 100vh;
   background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
   background-size: 300% 300%;
-  animation: gradientBG 6s ease infinite;
+  animation: gradientBG 6s ease infinite alternate;
+  will-change: background-position;
 }
 
 @keyframes gradientBG {
@@ -61,6 +63,12 @@ body {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+    padding: 25px;
   }
 }
 
@@ -123,6 +131,7 @@ h1 {
   border-radius: 5px;
   background-color: var(--input-bg);
   color: var(--text-color);
+  transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
 .input-box .icon {
@@ -133,6 +142,7 @@ h1 {
   width: 20px;
   height: 20px;
   filter: brightness(1);
+  pointer-events: none;
 }
 .dark-theme .input-box .icon {
   filter: brightness(0) invert(1);
@@ -179,12 +189,16 @@ button {
   color: #fff;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 button:hover {
   background: var(--button-hover);
   transform: scale(1.05);
+}
+
+button:active {
+  will-change: transform;
 }
 
 .signup {
