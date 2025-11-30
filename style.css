@@ -28,7 +28,7 @@ body {
 }
 
 .container {
-  background: #ffffff88;
+  background: #ffffff4f;
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -65,6 +65,16 @@ h1 {
 }
 
 .input-box .toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.input-box .toggle-icon2 {
   position: absolute;
   top: 50%;
   right: 10px;
