@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (getTema() === "escuro") body.classList.add("dark-theme");
 
   function updateThemeIcon() {
-    themeIcon.src = body.classList.contains("dark-theme") ? "moon.png" : "sun.png";
+    themeIcon.style.opacity = 0;
+    setTimeout(() => {
+      themeIcon.src = body.classList.contains("dark-theme") ? "moon.png" : "sun.png";
+      themeIcon.style.opacity = 1;
+    }, 150);
   }
 
   updateThemeIcon();
@@ -42,10 +46,3 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle1.addEventListener("click", () => { senhaInput1.type = senhaInput1.type === "password" ? "text" : "password"; });
   toggle2.addEventListener("click", () => { senhaInput2.type = senhaInput2.type === "password" ? "text" : "password"; });
 });
-function updateThemeIcon() {
-  themeIcon.style.opacity = 0; 
-  setTimeout(() => {
-    themeIcon.src = body.classList.contains("dark-theme") ? "moon.png" : "sun.png";
-    themeIcon.style.opacity = 1; 
-  }, 150);
-}
