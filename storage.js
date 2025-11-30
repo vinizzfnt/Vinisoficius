@@ -14,8 +14,8 @@ function removeItens(key) {
 function signUp(username, email, password) {
   if (!username || !email || !password) return { success: false, message: "Preencha todos os campos." };
   let users = getItens("users") || [];
-  if (users.find(user => user.username === username)) return { success: false, message: "Nome de usuário já existe." };
-  if (users.find(user => user.email === email)) return { success: false, message: "E-mail já cadastrado." };
+  if (users.find(u => u.username === username)) return { success: false, message: "Nome de usuário já existe." };
+  if (users.find(u => u.email === email)) return { success: false, message: "E-mail já cadastrado." };
   users.push({ username, email, password });
   salveItens("users", users);
   return { success: true, message: "Cadastro realizado com sucesso!" };
@@ -24,7 +24,7 @@ function signUp(username, email, password) {
 function login(usernameOrEmail, password) {
   let users = getItens("users") || [];
   const user = users.find(
-    user => (user.username === usernameOrEmail || user.email === usernameOrEmail) && user.password === password
+    u => (u.username === usernameOrEmail || u.email === usernameOrEmail) && u.password === password
   );
   if (user) {
     salveItens('currentUser', user.username);
@@ -43,17 +43,9 @@ function getCurrentUser() {
 }
 
 function salvarTema(tema) {
-  salveItens("tema", tema);
+  localStorage.setItem("tema", tema);
 }
 
 function getTema() {
-  return getItens("tema") || "claro";
-}
-function salveItens(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
-}
-
-function getItens(key) {
-  const item = localStorage.getItem(key);
-  return item ? JSON.parse(item) : null;
+  return localStorage.getItem("tema") || "claro";
 }
