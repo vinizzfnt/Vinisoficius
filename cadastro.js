@@ -46,3 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle1.addEventListener("click", () => { senhaInput1.type = senhaInput1.type === "password" ? "text" : "password"; });
   toggle2.addEventListener("click", () => { senhaInput2.type = senhaInput2.type === "password" ? "text" : "password"; });
 });
+let users = getItens("users") || [];
+users.push({ username, email, password });
+salveItens("users", users);

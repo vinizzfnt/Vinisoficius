@@ -49,3 +49,11 @@ function salvarTema(tema) {
 function getTema() {
   return getItens("tema") || "claro";
 }
+function salveItens(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getItens(key) {
+  const item = localStorage.getItem(key);
+  return item ? JSON.parse(item) : null;
+}

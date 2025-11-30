@@ -43,3 +43,6 @@ function updateThemeIcon() {
     themeIcon.style.opacity = 1; 
   }, 150);
 }
+let users = getItens("users") || [];
+users.push({ username, email, password });
+salveItens("users", users);
