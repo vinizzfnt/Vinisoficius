@@ -74,16 +74,6 @@ h1 {
   cursor: pointer;
 }
 
-.input-box .toggle-icon2 {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-
-}
 
 .options {
   display: flex;
