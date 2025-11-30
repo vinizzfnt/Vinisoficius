@@ -174,11 +174,12 @@ button {
   color: var(--button-text-color);
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 button:hover {
   background: var(--button-hover);
+  transform: scale(1.05);
 }
 
 .signup {
