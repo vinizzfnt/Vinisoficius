@@ -82,6 +82,8 @@ body {
 }
 
 #themeIcon {
+  user-select: none;
+  -webkit-user-drag: none;
   padding: 5px;
   border-radius: 30%;
   position: fixed;
@@ -135,6 +137,8 @@ h1 {
 }
 
 .input-box .icon {
+  user-select: none;
+  -webkit-user-drag: none;
   position: absolute;
   top: 50%;
   left: 10px;
@@ -149,6 +153,8 @@ h1 {
 }
 
 .input-box .toggle-icon {
+  -webkit-user-drag: none;
+  user-select: none;
   position: absolute;
   top: 50%;
   right: 10px;
