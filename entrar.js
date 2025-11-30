@@ -36,7 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   togglePassword("togglePassword", "senha");
 
   function updateThemeIcon() {
-    themeIcon.src = body.classList.contains("dark-theme") ? "moon.png" : "sun.png";
+    themeIcon.src = body.classList.contains("dark-theme")
+      ? "moon.png"
+      : "sun.png";
   }
 
   updateThemeIcon();
