@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
+  const body = document.body;
   const themeIcon = document.getElementById("themeIcon");
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-
     const loginInput = document.getElementById("loginUser").value.trim();
     const senha = document.getElementById("senha").value.trim();
 
@@ -13,13 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const isEmail = loginInput.includes("@");
-
     alert("Login realizado com: " + (isEmail ? "E-mail" : "Nome de usuário"));
   });
 
   function togglePassword(toggleId, inputId) {
     const toggle = document.getElementById(toggleId);
     const input = document.getElementById(inputId);
+    if (!toggle || !input) return;
 
     toggle.addEventListener("click", () => {
       if (input.type === "password") {
@@ -33,23 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   togglePassword("togglePassword", "senha");
-  function switchTheme() {
-    const body = document.body;
-    const themeIcon = document.getElementById("themeIcon");
 
+  function switchTheme() {
     themeIcon.style.opacity = "0";
     themeIcon.style.transform = "scale(0.8)";
 
     setTimeout(() => {
       body.classList.toggle("dark-theme");
-
-      themeIcon.src = body.classList.contains("dark-theme")
-        ? "moon.png"
-        : "sun.png";
-
+      themeIcon.src = body.classList.contains("dark-theme") ? "moon.png" : "sun.png";
       themeIcon.style.opacity = "1";
       themeIcon.style.transform = "scale(1)";
     }, 200);
   }
+
   themeIcon.addEventListener("click", switchTheme);
 });
