@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.toggle("dark-theme");
 
       themeIcon.src = body.classList.contains("dark-theme")
-        ? "sun.png"
-        : "moon.png";
+        ? "moon.png"
+        : "sun.png";
 
       themeIcon.style.opacity = "1";
       themeIcon.style.transform = "scale(1)";

@@ -5,12 +5,52 @@
   font-family: "Poppins", sans-serif;
 }
 
+:root {
+  --bg1: #ff9a3c;
+  --bg2: #ff5f6d;
+  --bg3: #ffc371;
+  --text-color: #000;
+
+  --container-bg: #ffffff4f;
+  --text-color: #000;
+  --input-bg: #ffffff44;
+
+  --button-bg: #ff5f6d;
+  --button-hover: #ff3b4f;
+
+  --link-color: #ff5f6d;
+
+  --checkbox-border: #ff5f6d;
+  --checkbox-bg: #ff5f6d;
+}
+
+.dark-theme {
+  --bg1: #0a1c2d;
+  --bg2: #0f2f4f;
+  --bg3: #072032;
+  --text-color: #8d8d8d;
+
+  --container-bg: #ffffff15;
+  --text-color: #e7f3ff;
+  --input-bg: #0f2538;
+
+  --button-bg: #1e4f91;
+  --button-hover: #2767b8;
+
+  --link-color: #4facfe;
+
+  --checkbox-border: #4facfe;
+  --checkbox-bg: #4facfe;
+}
+
+
 body {
+  color: (var(--text-color));
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(120deg, #ff9a3c, #ff5f6d, #ffc371);
+  background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
   background-size: 300% 300%;
   animation: gradientBG 6s ease infinite;
 }
@@ -28,7 +68,8 @@ body {
 }
 
 .container {
-  background: #ffffff4f;
+  color: var(--text-color);
+  background: var(--container-bg);
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -47,8 +88,11 @@ body {
   z-index: 1000;
   transition: opacity 0.25s ease, transform 0.25s ease;
   object-fit: contain; 
+  filter: brightness(1);
 }
-
+.dark-theme #themeIcon {
+  filter: brightness(0) invert(1);
+}
 
 @media (max-width: 400px) {
   #themeIcon {
@@ -60,6 +104,7 @@ body {
 }
 
 h1 {
+  color: var(--text-color);
   text-align: center;
   margin-bottom: 30px;
 }
@@ -76,7 +121,8 @@ h1 {
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: #ffffff44;
+  background-color: var(--input-bg);
+  color: var(--text-color);
 }
 
 .input-box .icon {
@@ -86,8 +132,11 @@ h1 {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
+  filter: brightness(1);
 }
-
+.dark-theme .input-box .icon {
+  filter: brightness(0) invert(1);
+}
 .input-box .toggle-icon {
   position: absolute;
   top: 50%;
@@ -96,6 +145,10 @@ h1 {
   width: 24px;
   height: 24px;
   cursor: pointer;
+  filter: brightness(1);
+}
+.dark-theme .input-box .toggle-icon {
+  filter: brightness(0) invert(1);
 }
 
 
@@ -109,22 +162,22 @@ h1 {
 
 .options a {
   text-decoration: none;
-  color: #ff5f6d;
+  color: var(--link-color);
 }
 
 button {
   width: 100%;
   padding: 10px;
-  background: #ff5f6d;
+  background: var(--button-bg);
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: var(--button-text-color);
   font-size: 16px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #ff3b4f;
+  background: var(--button-hover);
 }
 
 .signup {
@@ -135,7 +188,7 @@ button:hover {
 
 .signup a {
   text-decoration: none;
-  color: #ff5f6d;
+  color: var(--link-color);
 }
 .custom-checkbox input {
   display: none;
@@ -144,7 +197,7 @@ button:hover {
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 2px solid #ff5f6d;
+  border: 2px solid var(--checkbox-border);
   vertical-align: middle;
   margin-right: 8px;
   transition: background 0.2s ease-in-out;
@@ -152,7 +205,7 @@ button:hover {
   border-radius: 4px;
 }
 .custom-checkbox input:checked + span {
-  background: #ff5f6d;
+  background: var(--checkbox-bg);
 }
 .custom-checkbox input:hover + span {
   cursor: pointer;
@@ -164,7 +217,7 @@ button:hover {
   left: 6px;
   width: 4px;
   height: 8px;
-  border: solid #fff;
+  border: solid var(--input-bg);
   border-width: 0 2px 2px 0;
   transform: translate(-50%, -50%) rotate(45deg);
 }
