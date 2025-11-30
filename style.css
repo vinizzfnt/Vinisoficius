@@ -35,22 +35,23 @@ body {
   width: 350px;
 }
 
-.theme-icon {
+#themeIcon {
   padding: 5px;
   border-radius: 30%;
   position: fixed;
   top: 15px;
   right: 15px;
-  width: 35px;
-  height: 35px;
+  width: 35px;      
+  height: 35px;     
   cursor: pointer;
   z-index: 1000;
-}
-#themeIcon {
   transition: opacity 0.25s ease, transform 0.25s ease;
+  object-fit: contain; 
 }
+
+
 @media (max-width: 400px) {
-  .theme-icon {
+  #themeIcon {
     width: 30px;
     height: 30px;
     top: 10px;
