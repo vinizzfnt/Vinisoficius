@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 
-  // Função para configurar toggle de senha usando PNGs
+  
   function togglePassword(toggleId, inputId) {
     const toggle = document.getElementById(toggleId);
     const input = document.getElementById(inputId);
@@ -35,4 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   togglePassword("togglePassword1", "senha1");
   togglePassword("togglePassword2", "senha2");
+  function switchTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById("themeIcon");
+
+    themeIcon.style.opacity = "0";
+    themeIcon.style.transform = "scale(0.8)";
+
+    setTimeout(() => {
+      body.classList.toggle("dark-theme");
+
+      themeIcon.src = body.classList.contains("dark-theme")
+        ? "sun.png"
+        : "moon.png";
+
+      themeIcon.style.opacity = "1";
+      themeIcon.style.transform = "scale(1)";
+    }, 200);
+  }
+  themeIcon.addEventListener("click", switchTheme);
 });

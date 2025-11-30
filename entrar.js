@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
-
+  const themeIcon = document.getElementById("themeIcon");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -33,4 +33,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   togglePassword("togglePassword", "senha");
+  function switchTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById("themeIcon");
+
+    themeIcon.style.opacity = "0";
+    themeIcon.style.transform = "scale(0.8)";
+
+    setTimeout(() => {
+      body.classList.toggle("dark-theme");
+
+      themeIcon.src = body.classList.contains("dark-theme")
+        ? "sun.png"
+        : "moon.png";
+
+      themeIcon.style.opacity = "1";
+      themeIcon.style.transform = "scale(1)";
+    }, 200);
+  }
+  themeIcon.addEventListener("click", switchTheme);
 });
