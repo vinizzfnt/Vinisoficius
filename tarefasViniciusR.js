@@ -42,6 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
     salvarTarefas();
     renderizar();
     input.value = "";
+
+
+
+
+    
   });
 
   // Render inicial

@@ -255,3 +255,29 @@ button:active {
   border-width: 0 2px 2px 0;
   transform: translate(-50%, -50%) rotate(45deg);
 }
+.logout {
+  size: 16px;
+user-select: none;
+  -webkit-user-drag: none;
+  padding: 5px;
+  border-radius: 30%;
+  position: fixed;
+  top: 15px;
+  left: 15px;;
+  cursor: pointer;
+  z-index: 1000;
+  object-fit: contain;
+  filter: brightness(1);
+  transition: all 0.2s ease-in-out;
+}
+.logout:hover {
+  transform: scale(1.1);
+}
+.dark-theme .logout {
+  filter: brightness(0) invert(1);
+}
+.logout img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
