@@ -9,26 +9,28 @@
 }
 
 :root {
-  --bg1: #ff9a3c;
-  --bg2: #ff5f6d;
-  --bg3: #ffc371;
-  --text-color: #000;
+  --bg1: #d9f3ff;
+  --bg2: #5688a1;
+  --bg3: #e9faff;
+  --text-color: #08202f;
 
-  --container-bg: #ffffff4f;
-  --input-bg: #ffffff44;
+  --container-bg: #ffffff70;
+  --input-bg: #ffffff50;
 
-  --button-bg: #ff5f6d;
-  --button-hover: #ff3b4f;
+  --button-bg: #00a4ff;
+  --button-hover: #0088d6;
 
-  --link-color: #ff5f6d;
+  --link-color: #0070bb;
 
-  --checkbox-border: #ff5f6d;
-  --checkbox-bg: #ff5f6d;
+  --checkbox-border: #00a4ff;
+  --checkbox-bg: #00a4ff;
 }
+
+
 
 .dark-theme {
   --bg1: #0a1c2d;
-  --bg2: #0f2f4f;
+  --bg2: #41a0ff;
   --bg3: #072032;
   --text-color: #e7f3ff;
 
