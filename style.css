@@ -287,3 +287,17 @@ user-select: none;
   height: 35px;
   object-fit: contain;
 }
+.task {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.task ul {
+  list-style-type: none;
+  padding: 0;
+}
+.task li {
+  background: var(--input-bg);
+  padding: 10px;
+  border-radius: 5px;
+}

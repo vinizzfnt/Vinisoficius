@@ -22,12 +22,27 @@ document.addEventListener("DOMContentLoaded", () => {
       li.textContent = t;
 
       const btnRemover = document.createElement("button");
-      btnRemover.textContent = "X";
-      btnRemover.addEventListener("click", () => {
-        tarefas.splice(i, 1);
-        salvarTarefas();
-        renderizar();
-      });
+btnRemover.style.border = "none";
+btnRemover.style.background = "none";
+btnRemover.style.cursor = "pointer";
+btnRemover.style.padding = "0";
+
+// cria a imagem
+const img = document.createElement("img");
+img.src = "trash.png"; // coloque o nome da sua imagem
+img.alt = "Remover";
+img.style.width = "22px";    // opcional
+img.style.height = "22px";   // opcional
+
+btnRemover.appendChild(img);
+
+// evento de remover
+btnRemover.addEventListener("click", () => {
+  tarefas.splice(i, 1);
+  salvarTarefas();
+  renderizar();
+});
+
 
       li.appendChild(btnRemover);
       lista.appendChild(li);
