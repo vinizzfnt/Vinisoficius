@@ -59,6 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (senha1.length < 8) {
+      alert("A senha deve ter pelo menos 8 caracteres!");
+      return;
+    }
+
     if (senha1 !== senha2) {
       alert("As senhas não coincidem!");
       return;

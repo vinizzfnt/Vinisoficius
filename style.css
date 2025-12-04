@@ -30,12 +30,12 @@
 
 .dark-theme {
   --bg1: #0a1c2d;
-  --bg2: #41a0ff;
+  --bg2: #1b4875;
   --bg3: #072032;
   --text-color: #e7f3ff;
 
   --container-bg: #ffffff15;
-  --input-bg: #0f2538;
+  --input-bg: #0f25381a;
 
   --button-bg: #1e4f91;
   --button-hover: #2767b8;
@@ -126,6 +126,10 @@ h1 {
 .input-box {
   position: relative;
   margin-bottom: 20px;
+}
+input::placeholder {
+  color: var(--text-color);
+  opacity: 1;
 }
 
 .input-box input {
