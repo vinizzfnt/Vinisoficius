@@ -21,20 +21,30 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = document.createElement("li");
       li.textContent = t;
 
-      const btnRemover = document.createElement("button");
+// botão de remover
+const btnRemover = document.createElement("button");
 btnRemover.style.border = "none";
 btnRemover.style.background = "none";
 btnRemover.style.cursor = "pointer";
 btnRemover.style.padding = "0";
 
-// cria a imagem
-const img = document.createElement("img");
-img.src = "trash.png"; // coloque o nome da sua imagem
-img.alt = "Remover";
-img.style.width = "22px";    // opcional
-img.style.height = "22px";   // opcional
+// imagem da lixeira
+const imgTrash = document.createElement("img");
+imgTrash.src = "trash.png";
+imgTrash.alt = "Remover";
+imgTrash.style.width = "22px";
+imgTrash.style.height = "22px";
 
-btnRemover.appendChild(img);
+// imagem do check
+const imgCheck = document.createElement("img");
+imgCheck.src = "check.png";
+imgCheck.alt = "Marcar como feita";
+imgCheck.style.width = "22px";
+imgCheck.style.height = "22px";
+imgCheck.style.marginRight = "10px"; // opcional
+
+// adiciona as imagens dentro do li
+btnRemover.appendChild(imgTrash);
 
 // evento de remover
 btnRemover.addEventListener("click", () => {
@@ -42,6 +52,10 @@ btnRemover.addEventListener("click", () => {
   salvarTarefas();
   renderizar();
 });
+
+li.appendChild(imgCheck);
+li.appendChild(btnRemover);
+
 
 
       li.appendChild(btnRemover);
