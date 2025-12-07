@@ -60,21 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
         salvarTarefas();
         renderizar();
       });
-
-      // ------------------
-      // MONTAGEM DO ITEM
-      // ------------------
-      li.appendChild(imgCheck);     // check à esquerda
-      li.appendChild(spanTexto);    // texto central
-      li.appendChild(btnRemover);   // lixeira à direita
+      li.appendChild(imgCheck); 
+      li.appendChild(spanTexto);    
+      li.appendChild(btnRemover);   
 
       lista.appendChild(li);
     });
   }
 
-  // ------------------
-  // ADICIONAR TAREFA
-  // ------------------
+
   btnAdd.addEventListener("click", () => {
     const valor = input.value.trim();
     if (valor === "") return;
@@ -85,8 +79,5 @@ document.addEventListener("DOMContentLoaded", () => {
     input.value = "";
   });
 
-  // ------------------
-  // RENDER INICIAL
-  // ------------------
   renderizar();
 });
