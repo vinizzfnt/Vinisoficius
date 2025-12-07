@@ -3,81 +3,90 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnAdd = document.getElementById("adicionarTarefa");
   const lista = document.getElementById("listaTarefas");
 
-  // Pega usuário logado (se houver)
   const currentUser = getCurrentUser() || "default";
-
-  // Pega tarefas do localStorage
   let tarefas = getItens("tasks_" + currentUser) || [];
 
-  // Salva tarefas no localStorage
   function salvarTarefas() {
     salveItens("tasks_" + currentUser, tarefas);
   }
 
-  // Renderiza lista de tarefas
   function renderizar() {
     lista.innerHTML = "";
-    tarefas.forEach((t, i) => {
+
+    tarefas.forEach((tarefa, i) => {
       const li = document.createElement("li");
-      li.textContent = t;
 
-// botão de remover
-const btnRemover = document.createElement("button");
-btnRemover.style.border = "none";
-btnRemover.style.background = "none";
-btnRemover.style.cursor = "pointer";
-btnRemover.style.padding = "0";
+      // Converte strings antigas para objetos
+      if (typeof tarefa === "string") {
+        tarefa = { texto: tarefa, feito: false };
+        tarefas[i] = tarefa;
+      }
 
-// imagem da lixeira
-const imgTrash = document.createElement("img");
-imgTrash.src = "trash.png";
-imgTrash.alt = "Remover";
-imgTrash.style.width = "22px";
-imgTrash.style.height = "22px";
+      // ------------------
+      // CHECK (ESQUERDA)
+      // ------------------
+      const imgCheck = document.createElement("img");
+      imgCheck.classList.add("check");
+      imgCheck.src = tarefa.feito ? "cross.png" : "check.png";
+      imgCheck.alt = "Marcar como feita";
 
-// imagem do check
-const imgCheck = document.createElement("img");
-imgCheck.src = "check.png";
-imgCheck.alt = "Marcar como feita";
-imgCheck.style.width = "22px";
-imgCheck.style.height = "22px";
-imgCheck.style.marginRight = "10px"; // opcional
+      imgCheck.addEventListener("click", () => {
+        tarefa.feito = !tarefa.feito;
+        salvarTarefas();
+        renderizar();
+      });
 
-// adiciona as imagens dentro do li
-btnRemover.appendChild(imgTrash);
+      // ------------------
+      // TEXTO NO MEIO
+      // ------------------
+      const spanTexto = document.createElement("span");
+      spanTexto.textContent = tarefa.texto;
 
-// evento de remover
-btnRemover.addEventListener("click", () => {
-  tarefas.splice(i, 1);
-  salvarTarefas();
-  renderizar();
-});
+      if (tarefa.feito) li.classList.add("feito");
 
-li.appendChild(imgCheck);
-li.appendChild(btnRemover);
+      // ------------------
+      // BOTÃO LIXEIRA
+      // ------------------
+      const btnRemover = document.createElement("button");
+      const imgTrash = document.createElement("img");
 
+      imgTrash.src = "trash.png";
+      imgTrash.alt = "Remover";
 
+      btnRemover.appendChild(imgTrash);
 
-      li.appendChild(btnRemover);
+      btnRemover.addEventListener("click", () => {
+        tarefas.splice(i, 1);
+        salvarTarefas();
+        renderizar();
+      });
+
+      // ------------------
+      // MONTAGEM DO ITEM
+      // ------------------
+      li.appendChild(imgCheck);     // check à esquerda
+      li.appendChild(spanTexto);    // texto central
+      li.appendChild(btnRemover);   // lixeira à direita
+
       lista.appendChild(li);
     });
   }
 
-  // Adiciona nova tarefa
+  // ------------------
+  // ADICIONAR TAREFA
+  // ------------------
   btnAdd.addEventListener("click", () => {
     const valor = input.value.trim();
     if (valor === "") return;
-    tarefas.push(valor);
+
+    tarefas.push({ texto: valor, feito: false });
     salvarTarefas();
     renderizar();
     input.value = "";
-
-
-
-
-    
   });
 
-  // Render inicial
+  // ------------------
+  // RENDER INICIAL
+  // ------------------
   renderizar();
 });

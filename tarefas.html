@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="sun.png" alt="Claro" class="theme-icon" id="themeIcon" draggable="false" />
+
+    <img src="sun.png" class="theme-icon" id="themeIcon" draggable="false">
+
     <div class="logout">
         <a href="index.html"><img src="logout.png" alt="sair"></a>
     </div>
+
     <main class="container">
+        <h1>Minhas Tarefas</h1>
 
-        <form>
-            <h1>Minhas Tarefas</h1>
-
-            <div class="input-box">
-                <input type="text" id="novaTarefa" placeholder="Adicione uma nova tarefa" required />
-                <img src="pen.png" class="icon" alt="Tarefa" />
-                
-            </div>
-            <div class="task">
-            <button type="submit" id="adicionarTarefa">Adicionar</button>
-            <ul id="listaTarefas">
-            </div>
-            </ul>
-        </form>
+        <div class="input-box">
+            <input type="text" id="novaTarefa" placeholder="Adicione uma nova tarefa">
+            <img src="pen.png" class="icon">
+            
+        </div><button id="adicionarTarefa">Adicionar</button>
     </main>
+
+    <div class="tasks-wrapper">
+        <ul id="listaTarefas"></ul>
+    </div>
+
     <script src="storage.js"></script>
     <script src="tarefasViniciusR.js"></script>
     <script src="tarefas.js"></script>
+
 </body>
 </html>
